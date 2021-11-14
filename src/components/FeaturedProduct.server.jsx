@@ -1,7 +1,6 @@
 import {Link} from '@shopify/hydrogen/client';
 
 export default function FeaturedProduct({product}) {
-  console.log(product);
   return (
     <section>
       <div className="max-w-screen-2xl mx-auto py-10 px-4">
@@ -24,6 +23,7 @@ export default function FeaturedProduct({product}) {
             {product.title}
           </h1>
           <p className="mt-4 text-gray-500">{product.descriptionHtml}</p>
+          {/* TODO: Change this out for div that can hover effect */}
           <Link
             to={`/products/${product.handle}`}
             className="inline-block mt-6 bg-gray-800 text-white font-mono text-center tracking-widest rounded-md py-4 px-8 hover:shadow-xl hover:bg-gray-600 transition-all w-full"

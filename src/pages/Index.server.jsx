@@ -7,7 +7,7 @@ import {
 import Layout from '../components/Layout.server';
 import Hero from '../components/Hero.server';
 import FeaturedProduct from '../components/FeaturedProduct.server';
-import ProductList from '../components/ProductList.server';
+import CollectionSlider from '../components/CollectionSlider.server';
 import gql from 'graphql-tag';
 
 export default function Index() {
@@ -23,8 +23,8 @@ export default function Index() {
       numProductSellingPlans: 10,
     },
   });
-  const products = flattenConnection(data.products);
   const featuredProductArray = flattenConnection(data.collection.products);
+  const collectionArray = flattenConnection(data.collections);
 
   return (
     <Layout>
@@ -32,8 +32,7 @@ export default function Index() {
       {featuredProductArray.map((product) => (
         <FeaturedProduct key={product.id} product={product} />
       ))}
-
-      <ProductList products={products} />
+      <CollectionSlider collectionArray={collectionArray} handle="frontpage" />
     </Layout>
   );
 }
@@ -81,6 +80,31 @@ const QUERY = gql`
               }
               minVariantPrice {
                 amount
+              }
+            }
+          }
+        }
+      }
+    }
+    collections(first: 10) {
+      edges {
+        node {
+          id
+          handle
+          title
+          products(first: 5) {
+            edges {
+              node {
+                id
+                title
+                descriptionHtml
+                images(first: 1) {
+                  edges {
+                    node {
+                      ...ImageFragment
+                    }
+                  }
+                }
               }
             }
           }
