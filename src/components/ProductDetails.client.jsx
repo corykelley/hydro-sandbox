@@ -46,7 +46,6 @@ function AddToCartMarkup() {
 export default function ProductDetails({product}) {
   const initialVariant = flattenConnection(product.variants)[0];
   const imageSrc = product.images.edges[0].node.url;
-  console.log(imageSrc);
 
   return (
     <>

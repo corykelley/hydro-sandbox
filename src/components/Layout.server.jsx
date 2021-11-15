@@ -1,6 +1,8 @@
 import {useShopQuery, Link} from '@shopify/hydrogen';
 import gql from 'graphql-tag';
 
+import CartSection from '../components/CartSection.client';
+
 export default function Layout({children}) {
   const {data} = useShopQuery({
     query: QUERY,
@@ -48,6 +50,9 @@ function Header({data}) {
             </li>
             <li>
               <a href="#">Contact</a>
+            </li>
+            <li>
+              <CartSection />
             </li>
           </ul>
         </nav>

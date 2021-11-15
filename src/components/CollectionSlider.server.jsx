@@ -28,7 +28,6 @@ export default function CollectionSlider({handle}) {
                     key={product.id}
                     className="w-64 inline-flex flex-col lg:w-auto"
                   >
-                    {console.log(product.images.edges[0].node.url)}
                     <div className="group relative">
                       <Link to={`/products/${product.handle}`}>
                         <div className="w-full bg-gray-200 rounded-md overflow-hidden shadow-lg aspect-w-3 aspect-h-4">
