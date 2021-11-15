@@ -32,7 +32,7 @@ export default function Index() {
       {featuredProductArray.map((product) => (
         <FeaturedProduct key={product.id} product={product} />
       ))}
-      <CollectionSlider collectionArray={collectionArray} handle="frontpage" />
+      <CollectionSlider handle="frontpage" />
     </Layout>
   );
 }

@@ -2,7 +2,7 @@ import HydrogenIcon from '../components/HydrogenIcon.client';
 
 export default function Hero() {
   return (
-    <section>
+    <section className="mb-8 md:grid md:grid-cols-2">
       <div className="bg-red-500 pb-12">
         <HydrogenIcon />
         <div className="mx-auto w-[90%] text-center text-white">
