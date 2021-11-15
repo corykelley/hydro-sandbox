@@ -3,14 +3,18 @@ import HydrogenIcon from '../components/HydrogenIcon.client';
 export default function Hero() {
   return (
     <section className="mb-8 md:grid md:grid-cols-2">
-      <div className="bg-red-500 pb-12">
+      <div className="bg-red-500 h-96 md:h-[600px] flex flex-col justify-center items-center pb-12">
         <HydrogenIcon />
-        <div className="mx-auto w-[90%] text-center text-white">
-          <h1 className=" font-black text-3xl mb-1">Testing Grounds</h1>
-          <p className="font-bold tracking-[.5rem] uppercase">Great Java</p>
+        <div className="mx-auto text-white">
+          <h1 className=" font-bold text-3xl lg:text-6xl text-center mb-1">
+            Testing Grounds
+          </h1>
+          <p className="font-bold font-mono lg:text-xl text-center tracking-[.75rem] uppercase">
+            Great Java
+          </p>
         </div>
       </div>
-      <div className="w-full h-96 p-12 relative flex flex-col items-center justify-center">
+      <div className="w-full h-96 md:h-[600px] p-12 relative flex flex-col items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <img
             className="w-full h-full object-cover"
