@@ -20,6 +20,7 @@ export default function CartProvider({children, cart, numCartLines}) {
 
 function Provider({children, cart, numCartLines}) {
   const {openCart} = useCart();
+  console.log(useCart());
 
   // Return the `ShopifyCartProvider` component.
   return (
